@@ -5,7 +5,7 @@ import java.applet.Applet;
 import java.awt.*;
 import java.awt.image.*;
 
-public class MandelbrotSet extends Applet implements Runnable{
+public class mandelbrotSet extends Applet implements Runnable{
 
 	public static int w = 800;
 	public static int h = 800;
@@ -153,16 +153,16 @@ public class MandelbrotSet extends Applet implements Runnable{
 						y = 0;
 						int iteration = 0;
 						while(((x * x) + (y * y) <= 4) && (iteration != times)) {
-							x0 = Pixel.xmapMandelbrot(x,y,tempA);
-							y0 = Pixel.ymapMandelbrot(x,y,tempB);
+							x0 = pixel.xmapMandelbrot(x,y,tempA);
+							y0 = pixel.ymapMandelbrot(x,y,tempB);
 							x = x0;
 							y = y0;
 							iteration++;
 						}
 						// Use our helper methods to move things along
 						if(iteration <= times && iteration > 0) {
-							scaleda = Pixel.scaleX(tempA,xa,xb,w);
-							scaledb = Pixel.scaleY(tempB,ya,yb,h);
+							scaleda = pixel.scaleX(tempA,xa,xb,w);
+							scaledb = pixel.scaleY(tempB,ya,yb,h);
 							pixels[(scaledb * w) + scaleda] = (alpha<<24) | (red<<16) | (iteration<<8) ;
 						}
 					}
@@ -180,12 +180,3 @@ public class MandelbrotSet extends Applet implements Runnable{
 	}
 
 }
-
-
-
-
-
-
-
-
-
