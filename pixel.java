@@ -1,5 +1,5 @@
 
-public class Pixel{
+public class pixel{
 	/*
 	 * Holds all our helper methods that convert our numbers into math coordinates
 	 */
